@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func forloop() {
 	for i := 0; i <= 10; i++ {
@@ -19,10 +22,26 @@ func ifelse() {
 	}
 }
 
+func learnSwitch() {
+	switch time.Now().Weekday() {
+	case time.Saturday, time.Sunday:
+		fmt.Println("It's the weekend :), today is:", time.Now().Weekday())
+	default:
+		fmt.Println("It's a weekday :(, it's only", time.Now().Weekday())
+	}
+}
+
 func main() {
+
+	//Learn how to do for loops
 	fmt.Println("Running For Loops")
 	forloop()
 
+	//Simple If/Else ... basic language syntax
 	fmt.Println("Running IF/ELSE")
 	ifelse()
+
+	fmt.Println("Switch Statements")
+	learnSwitch()
+
 }
