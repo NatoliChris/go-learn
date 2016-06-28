@@ -54,3 +54,16 @@ sum(foo)
 * Similar to the threads 
 * All you have to do is call ``go`` with the function 
 * Runs *async*
+
+### Channels
+* Pipes that connect concurrent goroutines
+* Send values from one, receive from the other
+* create a channel: ``make(chan val-type)``
+* Send: ``<-``
+* Receive: ``<-channel``
+* By default, sends and receives block until sender AND receiver are ready
+* Channels by default unbuffered (accept sends if there is a receive ready to receive
+* Buffer allows for the receiving of many
+* How: ``make(chan type, limit)``
+
+
