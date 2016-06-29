@@ -75,4 +75,15 @@ sum(foo)
 * increases the *type safety* of the program
 
 
+### Select 
+* Lets you wait on multiple channel operations
+* Very similar to *switch* 
+
+```go
+select {
+	case ____ :
+		__________
+}
+```
+
 
