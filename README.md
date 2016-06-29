@@ -66,4 +66,13 @@ sum(foo)
 * Buffer allows for the receiving of many
 * How: ``make(chan type, limit)``
 
+#### Synchronization 
+* Using blocking to wait 
+* Function runs -> blocks and wait for receive 
+
+#### Channel Direction
+* channels as function parameters, specify recv/send only
+* increases the *type safety* of the program
+
+
 
