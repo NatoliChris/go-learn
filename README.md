@@ -74,6 +74,14 @@ sum(foo)
 * channels as function parameters, specify recv/send only
 * increases the *type safety* of the program
 
+#### Closing Chanel
+* Keyword ``close``, stops channel from receiving
+* can be useful to communicate completion to receivers
+* ``close(channel_name)``
+
+#### Channel Range
+* Can iterate through *like a queue*
+* iterate through values received by the channel
 
 ### Select 
 * Lets you wait on multiple channel operations
@@ -86,4 +94,11 @@ select {
 }
 ```
 
+### Timers
+* Built in timer, ticker feature for an interval
+* If you want a wait: ``time.Sleep``
+
+### Tickers
+* Timers are for when you want to do something once in the future
+* Tickers are good for regular, ticks periodically until stops
 
