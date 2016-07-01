@@ -102,3 +102,11 @@ select {
 * Timers are for when you want to do something once in the future
 * Tickers are good for regular, ticks periodically until stops
 
+### Worker pools
+* Threads can use worker functions
+* Can assign them jobs through a channel
+
+```go
+//Function that accepts request from jobs, and can input into results
+func worker(id int, jobs <-chan int, results chan<- int)
+```
