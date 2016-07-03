@@ -110,3 +110,12 @@ select {
 //Function that accepts request from jobs, and can input into results
 func worker(id int, jobs <-chan int, results chan<- int)
 ```
+
+### Rate Limiting
+* Good for resource utilization
+* Ticker limiter as a channel - use a blocking operation to wait until tick :)
+
+### Atomic Counter
+* Sync/Atomic, using add with multiple threads
+* helps to run goroutines
+
