@@ -134,4 +134,9 @@ func worker(id int, jobs <-chan int, results chan<- int)
 * Something went wrong -> panic
 * Throws error during operation, panic prints message, traces and exits with status
 
+### Defer 
+* Used to ensure that a function performed later
+* Usually used for cleanup 
+* Syntax: ``defer function(args)``
+
 
