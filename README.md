@@ -125,3 +125,6 @@ func worker(id int, jobs <-chan int, results chan<- int)
 * Lock ``mutex.Lock()``
 * Unlock ``mutex.Unlock()``
 
+### Sorting
+* Must define the type to sort
+* Has the ``____AreSorted`` to define a bool if sorted
