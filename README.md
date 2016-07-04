@@ -119,3 +119,9 @@ func worker(id int, jobs <-chan int, results chan<- int)
 * Sync/Atomic, using add with multiple threads
 * helps to run goroutines
 
+### Mutex
+* Very similar to C
+* Simple ``var mutex = &sync.Mutex``
+* Lock ``mutex.Lock()``
+* Unlock ``mutex.Unlock()``
+
