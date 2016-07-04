@@ -128,3 +128,10 @@ func worker(id int, jobs <-chan int, results chan<- int)
 ### Sorting
 * Must define the type to sort
 * Has the ``____AreSorted`` to define a bool if sorted
+* Give you the ability to define the sorting
+
+### Panic
+* Something went wrong -> panic
+* Throws error during operation, panic prints message, traces and exits with status
+
+
