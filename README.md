@@ -139,4 +139,6 @@ func worker(id int, jobs <-chan int, results chan<- int)
 * Usually used for cleanup 
 * Syntax: ``defer function(args)``
 
-
+### Collection Functions
+* ***Go Doesn't support generics***
+* common to provide functiosn specifically needed for data types
