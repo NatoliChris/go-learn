@@ -142,3 +142,7 @@ func worker(id int, jobs <-chan int, results chan<- int)
 ### Collection Functions
 * ***Go Doesn't support generics***
 * common to provide functiosn specifically needed for data types
+
+### JSON
+* Go inbuilt support for JSON
+* can ``json.Marshal`` and ``json.Unmarshall``
