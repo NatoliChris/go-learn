@@ -146,3 +146,10 @@ func worker(id int, jobs <-chan int, results chan<- int)
 ### JSON
 * Go inbuilt support for JSON
 * can ``json.Marshal`` and ``json.Unmarshall``
+
+### Time
+* Go has natural time support
+* Can create date and get year -> nanosecond
+* Can equate time: ``before/after/equal``
+* Can get differences: ``dif := now.Sub(then)`` and perform: ``Hours(), Minutes(), Seconds(), Nanoseconds()``
+* Can add time: ``time1.Add(time2)``
