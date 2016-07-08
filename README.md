@@ -164,3 +164,11 @@ func worker(id int, jobs <-chan int, results chan<- int)
 * ``net`` and ``net/url`` important for parsing 
 * Can ``url.parse(string)`` and start getting information
 * See file for minor examples
+
+### SHA / Hashing
+* Go has a Crypto Library, very useful in crypto
+* Very very similar to python
+* Define a new hash : ``sha256.New()``
+* Update with bytes
+* Write out
+
