@@ -172,3 +172,16 @@ func worker(id int, jobs <-chan int, results chan<- int)
 * Update with bytes
 * Write out
 
+### File Reading 
+* ``bufio`` and ``io, io/ioutil`` achieve file IO
+* Reading a file: ``ioutil.ReadFile`` or ``bufio.NewReader(f)``
+  * Define number of bytes: ``buff := make([]byte, 5)`` then ``num_bytes, err := f.Read(b2)``
+* Open and Close:
+  * Open: ``f, err := os.Open("path")``
+  * Close: ``f.Close()``
+* Seek:
+  * Forward: ``f.Seek(X, Y)``
+  * No rewind but: ``f.Seek(0,0)``
+* Bufio and Peek
+  * ``reader := bufio.NewReader(f)``
+  * ``reader.Peek(5)`` - peaks 5 bytes
