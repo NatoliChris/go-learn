@@ -158,3 +158,9 @@ func worker(id int, jobs <-chan int, results chan<- int)
 * Package ``strconv``
 * Simple ``atoi`` function for base 10
 * ParseFloat/Int/Uint.... for different bases
+
+### Url Parsing
+* Very important for web servers
+* ``net`` and ``net/url`` important for parsing 
+* Can ``url.parse(string)`` and start getting information
+* See file for minor examples
