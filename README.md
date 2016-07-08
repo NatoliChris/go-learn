@@ -191,3 +191,9 @@ func worker(id int, jobs <-chan int, results chan<- int)
 * If you are writing with ``file.WriteString("something")`` you need to ``file.Sync()``
 * Buffered: ``writer := bufio.NewWriter(f)``
 * Needs to ``writer.Flush()``
+
+### Process Spawning 
+* ``exec.Command("....")``
+* get the output ``out, err := ____.Output()``
+* Can call exec on bash: ``exec.Command("bash", "-c", "ls -alh")``
+
