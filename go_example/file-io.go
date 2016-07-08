@@ -15,6 +15,10 @@ func check(e error) {
 }
 
 func main() {
+
+	/* ---------------------
+			File Reading
+	   --------------------- */
 	dat, err := ioutil.ReadFile("/tmp/dat")
 	check(err)
 	fmt.Println(string(dat))
@@ -53,4 +57,34 @@ func main() {
 
 	// Close the file!
 	f.Close()
+	/* ---------------------
+			File Writing
+	   --------------------- */
+
+	d1 := []byte("Hello\ngo\n")
+	// Dump bytes into a file with permissions
+	ex := ioutil.WriteFile("/tmp/dat1", d1, 0644)
+	check(ex)
+
+	ofile, err := os.Create("/tmp/dat2")
+	check(err)
+
+	defer ofile.Close()
+
+	d2 := []byte{115, 111, 109, 101, 10}
+	n5, err := ofile.Write(d2)
+	check(err)
+	fmt.Printf("wrote: %d bytes\n", n5)
+
+	n6, err := ofile.WriteString("Writes\n")
+	fmt.Printf("wrote %d bytes\n", n6)
+
+	// Flushes the file to writable storage
+	ofile.Sync()
+
+	w := bufio.NewWriter(ofile)
+	n7, err := w.WriteString("buffered\n")
+	fmt.Printf("wrote %d bytes\n", n7)
+
+	w.Flush()
 }

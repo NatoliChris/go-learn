@@ -185,3 +185,9 @@ func worker(id int, jobs <-chan int, results chan<- int)
 * Bufio and Peek
   * ``reader := bufio.NewReader(f)``
   * ``reader.Peek(5)`` - peaks 5 bytes
+
+### File Writing 
+* Simple ``file.Write(bytes)``
+* If you are writing with ``file.WriteString("something")`` you need to ``file.Sync()``
+* Buffered: ``writer := bufio.NewWriter(f)``
+* Needs to ``writer.Flush()``
