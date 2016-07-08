@@ -153,3 +153,8 @@ func worker(id int, jobs <-chan int, results chan<- int)
 * Can equate time: ``before/after/equal``
 * Can get differences: ``dif := now.Sub(then)`` and perform: ``Hours(), Minutes(), Seconds(), Nanoseconds()``
 * Can add time: ``time1.Add(time2)``
+
+### Number Parsing 
+* Package ``strconv``
+* Simple ``atoi`` function for base 10
+* ParseFloat/Int/Uint.... for different bases
