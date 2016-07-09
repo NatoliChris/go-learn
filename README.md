@@ -197,3 +197,7 @@ func worker(id int, jobs <-chan int, results chan<- int)
 * get the output ``out, err := ____.Output()``
 * Can call exec on bash: ``exec.Command("bash", "-c", "ls -alh")``
 
+### Signals
+* Can catch signals in a channel
+* Can use a goroutine to catch and handle
+
