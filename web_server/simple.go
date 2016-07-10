@@ -6,17 +6,18 @@ import (
 	"net/http"
 )
 
-func hello(res http.ResponseWriter, req *http.Request) {
-	io.WriteString(res, "Hello, World!")
+// will echo back
+func echo(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Hi there, I love %s!", r.URL.Path[1:])
 }
 
-func goodbye(res http.ResponseWriter, req *http.Request) {
-	io.WriteString(res, "Goodbye")
+func hello(w http.ResponseWriter, r *http.Request) {
+	io.WriteString(w, "Hello, World!")
 }
 
 func main() {
-	http.HandleFunc("/", hello)
-	http.HandleFunc("/hello", goodbye)
+	http.HandleFunc("/", echo)
+	http.HandleFunc("/hello", hello)
 	fmt.Println("Listening...")
 	http.ListenAndServe(":8018", nil)
 }
