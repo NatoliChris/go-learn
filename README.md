@@ -201,3 +201,6 @@ func worker(id int, jobs <-chan int, results chan<- int)
 * Can catch signals in a channel
 * Can use a goroutine to catch and handle
 
+### Exit
+* ``os.Exit(status_num)``
+* Defers never run when exiting
