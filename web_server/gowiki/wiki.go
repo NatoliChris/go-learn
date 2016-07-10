@@ -8,6 +8,7 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"net/http"
 )
 
 // Make a page struct, has a title and body
@@ -34,9 +35,26 @@ func loadPage(title string) (*Page, error) {
 	return &Page{Title: title, Body: body}, nil
 }
 
+func viewHandler(w http.ResponseWriter, r *http.Request) {
+	title := r.URL.Path[len("/view/"):]
+	p, err := loadPage(title)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Fprintf(w, "<h1>%s</h1><div>%s</div>", p.Title, p.Body)
+}
+
 func main() {
-	p1 := &Page{"TestPage", []byte("This is a sample")}
-	p1.save()
-	p2, _ := loadPage("TestPage")
-	fmt.Println(string(p2.Body))
+	/*
+		-- Demonstration of how page save/load works
+		p1 := &Page{"TestPage", []byte("This is a sample")}
+		p1.save()
+		p2, _ := loadPage("TestPage")
+		fmt.Println(string(p2.Body))
+	*/
+
+	http.HandleFunc("/view/", viewHandler)
+	fmt.Println("Listening...")
+	http.ListenAndServe(":8018", nil)
 }
